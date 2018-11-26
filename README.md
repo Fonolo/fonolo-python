@@ -48,8 +48,6 @@ Full API documentation is available from the [Fonolo developer site.][fonolo dev
 ### v1.0.0
 * Added support for the realtime and scheduled call-backs view.
 * Added support for the timezones endpoint.
-
-### v1.0.0
 * Initial release.
 
 [fonolo dev site]:  https://fonolo.com/help/api/

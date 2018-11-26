@@ -1,0 +1,5 @@
+*.py[cod]
+__pycache__
+pip-log.txt
+.svn
+test.py

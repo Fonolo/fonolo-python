@@ -12,10 +12,10 @@ import re
 from .requesthandler import RequestHandler
 from ..exception.exception import FonoloException
 
-class Calls(object):
+class Pending(object):
 
     def __init__(self, _handler):
         self.handler = _handler;
 
     def get(self, _params=None):
-        return self.handler.get('calls', _params);
+        return self.handler.get('pending');

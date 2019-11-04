@@ -3,3 +3,7 @@ __pycache__
 pip-log.txt
 .svn
 test.py
+build
+dist
+fonolo.egg-info
+

@@ -18,8 +18,8 @@ class CallBack(object):
         self.handler = _handler;
         self.call_id = _call_id;
 
-    def start(self, _args):
-        return self.handler.post('callback', _args);
+    def start(self, _params):
+        return self.handler.post('callback', _params);
 
     def cancel(self):
         return self.handler.post('callback/' + self.call_id + '/cancel', {});

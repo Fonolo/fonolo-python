@@ -18,5 +18,5 @@ class Questions(object):
         self.handler = _handler;
         self.profile_id = _profile_id;
 
-    def get(self, _args=None):
+    def get(self, _params=None):
         return self.handler.get('profile/' + self.profile_id + '/questions');

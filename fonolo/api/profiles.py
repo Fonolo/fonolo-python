@@ -17,5 +17,5 @@ class Profiles(object):
     def __init__(self, _handler):
         self.handler = _handler;
 
-    def get(self, _args=None):
+    def get(self, _params=None):
         return self.handler.get('profiles');

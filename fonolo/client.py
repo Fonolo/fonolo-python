@@ -18,6 +18,7 @@ from .api.calls import Calls
 from .api.profile import Profile
 from .api.profiles import Profiles
 from .api.realtime import Realtime
+from .api.pending import Pending
 from .api.scheduled import Scheduled
 from .api.timezones import Timezones
 
@@ -50,16 +51,30 @@ class Client(object):
         # the default API settings
         #
         self.options = {
-            'url': 'https://api.fonolo.com/3.0/'
+            'url': 'https://api.fonolo.com/3.0/',
+            'verify_ssl': True
         }
 
         self.request = RequestHandler(self.account_sid, self.api_token, self.options);
 
         self.calls      = Calls(self.request);
         self.realtime   = Realtime(self.request);
+        self.pending    = Pending(self.request);
         self.scheduled  = Scheduled(self.request);
         self.profiles   = Profiles(self.request);
         self.timezones  = Timezones(self.request);
+
+    #
+    # quick function to override the endpoint URL for development
+    #
+    def endpoint(self, _endpoint_url):
+        self.options['url'] = _endpoint_url;
+
+    #
+    # turn on/off SSL verification- for testing
+    #
+    def verify_ssl(self, _verify):
+        self.options['verify_ssl'] = _verify;
 
     #
     # call-back

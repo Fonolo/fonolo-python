@@ -19,7 +19,7 @@ class RequestHandler(object):
         self.api_token = _api_token
         self.options = _options
 
-    def get(self, _path):
+    def get(self, _path, _params=None):
 
         #
         # build the API URL using the path provided
@@ -29,7 +29,7 @@ class RequestHandler(object):
         #
         # make the post request
         #
-        res = requests.get(url, auth=(self.account_sid, self.api_token), verify=True)
+        res = requests.get(url, auth=(self.account_sid, self.api_token), verify=self.options['verify_ssl'], params=_params)
 
         #
         # catch any JSON parsing exceptions
@@ -51,7 +51,7 @@ class RequestHandler(object):
         #
         # make the post request
         #
-        res = requests.post(url, data = _params, auth=(self.account_sid, self.api_token), verify=True)
+        res = requests.post(url, data = _params, auth=(self.account_sid, self.api_token), verify=self.options['verify_ssl'])
 
         #
         # catch any JSON parsing exceptions

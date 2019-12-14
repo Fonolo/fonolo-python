@@ -17,7 +17,7 @@ except ImportError:
 
 setup(
     name='fonolo',
-    version='1.0.1',
+    version='1.0.2',
     description='A Python wrapper for the Fonolo Call-Back Service',
     author='Mike Pultz',
     author_email='mike@fonolo.com',

@@ -15,6 +15,8 @@ from .api.requesthandler import RequestHandler
 from .api.callback import CallBack
 from .api.call import Call
 from .api.calls import Calls
+from .api.optin import Optin
+from .api.optins import Optins
 from .api.profile import Profile
 from .api.profiles import Profiles
 from .api.realtime import Realtime
@@ -29,7 +31,7 @@ class Client(object):
         #
         # Python library version
         #
-        self.version = '1.0.1'
+        self.version = '1.0.2'
 
         #
         # validate account SID
@@ -58,6 +60,7 @@ class Client(object):
         self.request = RequestHandler(self.account_sid, self.api_token, self.options);
 
         self.calls      = Calls(self.request);
+        self.optins     = Optins(self.request);
         self.realtime   = Realtime(self.request);
         self.pending    = Pending(self.request);
         self.scheduled  = Scheduled(self.request);
@@ -87,6 +90,12 @@ class Client(object):
     #
     def call(self, _call_id):
         return Call(self.request, _call_id);
+
+    #
+    # optins
+    #
+    def optin(self, _optin_id):
+        return Optin(self.request, _optin_id);
 
     #
     # profiles
